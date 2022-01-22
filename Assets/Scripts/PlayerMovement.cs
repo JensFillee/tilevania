@@ -11,18 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D myRigidbody;
 
-    void Awake() {
+    void Awake()
+    {
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         Run();
+        FlipSprite();
     }
 
     // Will be called on every change in movement bindings (press right-arrow, let go of left-arrow, ...)
@@ -43,5 +45,19 @@ public class PlayerMovement : MonoBehaviour
 
         myRigidbody.velocity = playerVelocity;
     }
-    
+
+    void FlipSprite()
+    {
+        // Best practise: Use Mathf.Epsilon (= smallest possible value) instead of 0
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+
+        if (playerHasHorizontalSpeed)
+        {
+            // Change x-scale to -1 to flip sprite (leave y-scale at 1)
+            // Mathf.Sign(value): returns 1 if value is positive, -1 if negative
+            transform.localScale = new Vector2(Mathf.Sign(myRigidbody.velocity.x), 1f);
+        }
+
+    }
+
 }
