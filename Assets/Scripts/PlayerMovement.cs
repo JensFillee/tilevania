@@ -5,15 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // = (x, y)
-    Vector2 moveInput;
     [SerializeField] float moveSpeed = 5f;
 
+    // = (x, y)
+    Vector2 moveInput;
     Rigidbody2D myRigidbody;
+    Animator myAnimator;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     void Start()
@@ -42,8 +44,10 @@ public class PlayerMovement : MonoBehaviour
         // Player may only move on x-axis
         // Just keep current velocity on y-axis (gravity)
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, myRigidbody.velocity.y);
-
         myRigidbody.velocity = playerVelocity;
+
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
     }
 
     void FlipSprite()
