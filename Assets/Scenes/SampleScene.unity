@@ -203,7 +203,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.3729603, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.3729603, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -504,7 +504,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.25
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -528,7 +528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.802434, y: 0.7397448, z: -10}
+  m_LocalPosition: {x: -7.598962, y: 1.4898335, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6527,6 +6527,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!4 &1265599317 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1414208430423162250, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
+  m_PrefabInstance: {fileID: 26036241816608605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861656174
 GameObject:
   m_ObjectHideFlags: 3
@@ -7167,7 +7172,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.3729603, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7231,6 +7236,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
+      propertyPath: slingshot
+      value: 
+      objectReference: {fileID: 1265599317}
+    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5638618386401871383, guid: 0f73806085c80634ba30c3ce586c89c1, type: 3}
     - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
       propertyPath: deathForceX
       value: 8
@@ -7301,6 +7314,22 @@ PrefabInstance:
     - target: {fileID: 4049179017597921418, guid: d330c2943699564418b4ea89b4f10291, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049179017597921421, guid: d330c2943699564418b4ea89b4f10291, type: 3}
+      propertyPath: m_Size.x
+      value: 0.84900224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049179017597921421, guid: d330c2943699564418b4ea89b4f10291, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5828795
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049179017597921421, guid: d330c2943699564418b4ea89b4f10291, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00889436
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049179017597921421, guid: d330c2943699564418b4ea89b4f10291, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.21235463
       objectReference: {fileID: 0}
     - target: {fileID: 4049179017597921421, guid: d330c2943699564418b4ea89b4f10291, type: 3}
       propertyPath: m_IsTrigger

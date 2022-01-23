@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float deathForceX = 5f;
     [SerializeField] float deathForceY = 5f;
+    [SerializeField] GameObject projectile;
+    [SerializeField] Transform slingshot;
 
     float myGravityScale;
 
@@ -83,6 +85,17 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
 
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive)
+        {
+            return;
+        }
+
+        // transform.rotation refers to transform of projectile
+        Instantiate(projectile, slingshot.position, transform.rotation);
     }
 
     void Run()
