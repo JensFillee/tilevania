@@ -193,10 +193,10 @@ MonoBehaviour:
   moveSpeed: 8
   jumpSpeed: 19
   climbSpeed: 5
-  deathForceX: 10
+  deathForceX: 8
   deathForceY: 10
-  projectile: {fileID: 0}
-  slingshot: {fileID: 0}
+  projectile: {fileID: 5638618386401871383, guid: 0f73806085c80634ba30c3ce586c89c1, type: 3}
+  slingshot: {fileID: 1414208430423162250}
 --- !u!61 &8246805237843229746
 BoxCollider2D:
   m_ObjectHideFlags: 0
