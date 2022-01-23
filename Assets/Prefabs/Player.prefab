@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1297879369}
   - component: {fileID: 26036241816608607}
   - component: {fileID: 4114842086057166773}
-  m_Layer: 0
+  - component: {fileID: 8246805237843229746}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,11 +125,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1297879369
 CapsuleCollider2D:
@@ -139,12 +140,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 26036240958606873}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7f5141e55b43cf745ba931d40292bd6b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019061536, y: 0.08668476}
-  m_Size: {x: 0.68597907, y: 1.097021}
+  m_Offset: {x: 0.019061536, y: 0.09229338}
+  m_Size: {x: 0.68597907, y: 1.0858037}
   m_Direction: 0
 --- !u!114 &26036241816608607
 MonoBehaviour:
@@ -188,3 +189,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17ff07dfe758754093359f3c73c7430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 8
+  jumpSpeed: 19
+  climbSpeed: 5
+--- !u!61 &8246805237843229746
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26036240958606873}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7f5141e55b43cf745ba931d40292bd6b, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011299133, y: -0.37490034}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.424551, y: 0.17820242}
+  m_EdgeRadius: 0
