@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] float deathForceX = 5f;
+    [SerializeField] float deathForceY = 5f;
 
     float myGravityScale;
 
@@ -16,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
-
     BoxCollider2D myFeetCollider;
+
+    bool isAlive = true;
 
     void Awake()
     {
@@ -31,14 +34,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
+
         Run();
         FlipSprite();
         ClimbLadder();
+
+        Die();
+
     }
 
     // Will be called on every change in movement bindings (press right-arrow, let go of left-arrow, ...)
     void OnMove(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
+
         // Assign which movement happened to moveInput
         // value.Get<Vector2>() = (x, y) (example: -1.00, 0.00) (0.00, 0.00 when letting go of movement button)
         moveInput = value.Get<Vector2>();
@@ -48,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
+
         // If not touching ground
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
@@ -60,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
+
     }
 
     void Run()
@@ -103,5 +125,26 @@ public class PlayerMovement : MonoBehaviour
 
         bool playerHasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
+    }
+
+
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "Enemy")
+    //     {
+    //         Die();
+    //     }
+    // }
+
+    void Die()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            myRigidbody.velocity += new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)) * deathForceX, deathForceY);
+
+            myBodyCollider.sharedMaterial.friction = 5f;
+        }
     }
 }

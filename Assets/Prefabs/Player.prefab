@@ -192,6 +192,8 @@ MonoBehaviour:
   moveSpeed: 8
   jumpSpeed: 19
   climbSpeed: 5
+  deathForceX: 10
+  deathForceY: 10
 --- !u!61 &8246805237843229746
 BoxCollider2D:
   m_ObjectHideFlags: 0
