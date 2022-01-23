@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         myFeetCollider = GetComponent<BoxCollider2D>();
 
         myGravityScale = myRigidbody.gravityScale;
+        myBodyCollider.sharedMaterial.friction = 0f;
     }
 
     void Update()
@@ -138,11 +139,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        // If touching Enemies OR Hazards
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
-            myRigidbody.velocity += new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)) * deathForceX, deathForceY);
+            myRigidbody.velocity = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)) * deathForceX, deathForceY);
 
             myBodyCollider.sharedMaterial.friction = 5f;
         }
