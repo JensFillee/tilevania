@@ -160,6 +160,8 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)) * deathForceX, deathForceY);
 
             myBodyCollider.sharedMaterial.friction = 5f;
+
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 }

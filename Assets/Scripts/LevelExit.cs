@@ -9,7 +9,10 @@ public class LevelExit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(loadNextLevel());
+        if (other.tag == "Player")
+        {
+            StartCoroutine(loadNextLevel());
+        }
     }
 
     // Coroutines: used to create a delay
