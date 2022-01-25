@@ -3273,11 +3273,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!4 &1265599317 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1414208430423162250, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
-  m_PrefabInstance: {fileID: 26036241816608605}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005979559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,22 +3544,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
-      propertyPath: slingshot
-      value: 
-      objectReference: {fileID: 1265599317}
-    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 5638618386401871383, guid: 0f73806085c80634ba30c3ce586c89c1, type: 3}
-    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
-      propertyPath: deathForceX
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4114842086057166773, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
-      propertyPath: deathForceY
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aefe44b3ab7ebfe4fa9f574f2e3351fe, type: 3}
 --- !u!95 &26036241816608612 stripped
@@ -3610,7 +3589,7 @@ PrefabInstance:
       objectReference: {fileID: 26036241816608613}
     - target: {fileID: 1668738801331567926, guid: 9ed9494a1e0d10e4e8157690e37d67f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.831597
+      value: -8.663183
       objectReference: {fileID: 0}
     - target: {fileID: 1668738801331567926, guid: 9ed9494a1e0d10e4e8157690e37d67f1, type: 3}
       propertyPath: m_LocalPosition.y
