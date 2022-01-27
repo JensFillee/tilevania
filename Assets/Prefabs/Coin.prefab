@@ -137,3 +137,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSFX: {fileID: 8300000, guid: 36af4d3e516bf8d4faa2383b1c548c96, type: 3}
   volume: 0.3
+  coinValue: 100

@@ -29,15 +29,19 @@ public class LevelExit : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
+        Debug.Log("next " + nextSceneIndex);
+        // SceneManager.sceneCount always returns 1 (for some reason)
+        Debug.Log("sceneCount " + SceneManager.sceneCountInBuildSettings);
+
         // If this is the last level
-        if (nextSceneIndex == SceneManager.sceneCount)
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             // next level = level 1
             nextSceneIndex = 0;
         }
 
         FindObjectOfType<ScenePersist>().ResetScenePersist();
-        
-        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
