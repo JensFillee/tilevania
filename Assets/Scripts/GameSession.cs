@@ -65,6 +65,8 @@ public class GameSession : MonoBehaviour
     // Restart game
     void ResetGameSession()
     {
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
+
         SceneManager.LoadScene(0);
 
         // Destroy this object (singleton)
